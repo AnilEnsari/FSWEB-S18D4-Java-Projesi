@@ -2,6 +2,7 @@ package com.example.onetomany.service;
 
 
 import com.example.onetomany.dao.CustomerRepository;
+import com.example.onetomany.entity.Account;
 import com.example.onetomany.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,5 +55,12 @@ public class CustomerImpl implements CustomerService{
         Customer deletedCustomer = findById(id);
         customerRepository.delete(deletedCustomer);
         return deletedCustomer;
+    }
+
+    @Override
+    public List<Account> addAccount(Customer customer ,Account account) {
+        List<Account> currentList =  customer.getAccountList() ;
+        currentList.add(account);
+        return currentList;
     }
 }

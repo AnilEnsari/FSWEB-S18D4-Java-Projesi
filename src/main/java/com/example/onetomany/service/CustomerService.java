@@ -1,5 +1,6 @@
 package com.example.onetomany.service;
 
+import com.example.onetomany.entity.Account;
 import com.example.onetomany.entity.Customer;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface CustomerService {
     Customer save(Customer customer);
     Customer put(Customer customer,int id);
     Customer delete(int id);
+    List <Account> addAccount (Customer custer ,Account account);
 }
