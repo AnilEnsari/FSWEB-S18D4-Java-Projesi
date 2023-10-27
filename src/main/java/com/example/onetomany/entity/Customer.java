@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -29,6 +30,6 @@ public class Customer {
    private Address address ;
 
    @OneToMany (mappedBy = "customer", cascade = CascadeType.ALL)
-   private List<Account> accountList ;
+   private List<Account> accountList = new ArrayList<>();
 
 }
